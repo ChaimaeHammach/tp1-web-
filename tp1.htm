@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercices tp1 </title>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        h2 {
+            color: #444;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #555;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        
+        
+        .temps-groupe {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        input[type="number"], input[type="text"] {
+            width: 80px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        input[readonly] {
+            background-color: #e9ecef;
+        }
+        
+        .boutons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        button {
+            padding: 10px 30px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-calcul {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .btn-calcul:hover {
+            background-color: #45a049;
+        }
+        
+        .btn-effacer {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .btn-effacer:hover {
+            background-color: #da190b;
+        }
+        </style>
+</head>
+<body>
+     <div class="container">
+        <h1>Exercices JavaScript</h1>
+        
+        
+        <div class="section">
+            <h2>Exercice 1 : Calculateur de Temps</h2>
+            
+            <div class="temps-groupe">
+                <h3>Entrer le premier temps :</h3>
+                Heure(s) <input type="number" id="h1" value="0" min="0">
+                Minute(s) <input type="number" id="m1" value="0" min="0" max="59">
+                Seconde(s) <input type="number" id="s1" value="0" min="0" max="59">
+            </div>
+            
+            <div class="temps-groupe">
+                <h3>Entrer le Deuxième temps :</h3>
+                Heure(s) <input type="number" id="h2" value="0" min="0">
+                Minute(s) <input type="number" id="m2" value="0" min="0" max="59">
+                Seconde(s) <input type="number" id="s2" value="0" min="0" max="59">
+            </div>
+            
+            <div class="temps-groupe">
+                <h3>Entrer le troisième temps :</h3>
+                Heure(s) <input type="number" id="h3" value="0" min="0">
+                Minute(s) <input type="number" id="m3" value="0" min="0" max="59">
+                Seconde(s) <input type="number" id="s3" value="0" min="0" max="59">
+            </div>
+            
+            <div class="temps-groupe">
+                <h3>Total des trois temps :</h3>
+                Jour(s) <input type="text" id="jours" readonly>
+                Heure(s) <input type="text" id="heuresTotal" readonly>
+                Minute(s) <input type="text" id="minutesTotal" readonly>
+                Seconde(s) <input type="text" id="secondesTotal" readonly>
+            </div>
+            
+            <div class="boutons">
+                <button class="btn-calcul" onclick="calculerSomme()">Somme</button>
+                <button class="btn-effacer" onclick="effacer()">Effacer</button>
+            </div>
+        </div>
+    <h1>📝 Questionnaire QCM</h1>
+    
+   
+    <div class="question" data-correct="paris">
+        <h3>Question 1 : Quelle est la capitale de la France ?</h3>
+        <label>
+            <input type="radio" name="q1" value="lyon">
+            Lyon
+        </label><br>
+        <label>
+            <input type="radio" name="q1" value="paris">
+            Paris
+        </label><br>
+        <label>
+            <input type="radio" name="q1" value="marseille">
+            Marseille
+        </label>
+    </div>
+    <hr>
+    
+   
+    <div class="question" data-correct="4">
+        <h3>Question 2 : Combien font 2 + 2 ?</h3>
+        <label>
+            <input type="radio" name="q2" value="3">
+            3
+        </label><br>
+        <label>
+            <input type="radio" name="q2" value="4">
+            4
+        </label><br>
+        <label>
+            <input type="radio" name="q2" value="5">
+            5
+        </label>
+    </div>
+    <hr>
+    
+   
+    <div class="question" data-correct="html,css,javascript">
+        <h3>Question 3 : Quels sont les langages utilisés pour le développement web front-end ? (plusieurs réponses)</h3>
+        <label>
+            <input type="checkbox" name="q3" value="html">
+            HTML
+        </label><br>
+        <label>
+            <input type="checkbox" name="q3" value="css">
+            CSS
+        </label><br>
+        <label>
+            <input type="checkbox" name="q3" value="javascript">
+            JavaScript
+        </label><br>
+        <label>
+            <input type="checkbox" name="q3" value="python">
+            Python
+        </label>
+    </div>
+    <hr>
+    
+   
+    <div class="question" data-correct="rouge,bleu,vert">
+        <h3>Question 4 : Quelles sont les couleurs primaires en synthèse additive (RVB) ? (plusieurs réponses)</h3>
+        <label>
+            <input type="checkbox" name="q4" value="rouge">
+            Rouge
+        </label><br>
+        <label>
+            <input type="checkbox" name="q4" value="bleu">
+            Bleu
+        </label><br>
+        <label>
+            <input type="checkbox" name="q4" value="vert">
+            Vert
+        </label><br>
+        <label>
+            <input type="checkbox" name="q4" value="jaune">
+            Jaune
+        </label>
+    </div>
+    <hr>
+  
+    <div class="question" data-correct="1991">
+        <h3>Question 5 : En quelle année a été créé le World Wide Web ?</h3>
+        <label>
+            <input type="radio" name="q5" value="1985">
+            1985
+        </label><br>
+        <label>
+            <input type="radio" name="q5" value="1991">
+            1991
+        </label><br>
+        <label>
+            <input type="radio" name="q5" value="2000">
+            2000
+        </label>
+    </div>
+    <hr>
+    
+    
+    <button onclick="reinitialiser()">🔄 Réinitialiser le QCM</button>
+    <button onclick="afficherReponses()">👁️ Afficher Questions et Réponses</button>
+    <button onclick="afficherResultat()">📊 Afficher le Résultat</button>
+    
+    <h2 id="score"></h2>
+
+    
+    <script src="tp1.js"></script>
+</body>
+</html>
